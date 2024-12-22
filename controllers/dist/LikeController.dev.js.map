@@ -1,0 +1,1 @@
+{"version":3,"sources":["LikeController.js"],"names":["exports","dummyLink","req","res","send"],"mappings":";;AACAA,OAAO,CAACC,SAAR,GAAoB,UAACC,GAAD,EAAKC,GAAL,EAAa;AAC7BA,EAAAA,GAAG,CAACC,IAAJ,CAAS,yBAAT;AACH,CAFD","sourcesContent":["\nexports.dummyLink = (req,res) => {\n    res.send(\"This is your dummy page\");\n};"],"file":"LikeController.dev.js"}
