@@ -49,22 +49,28 @@ exports.getAllPosts = function _callee2(req, res) {
         case 0:
           _context2.prev = 0;
           _context2.next = 3;
-          return regeneratorRuntime.awrap(P);
+          return regeneratorRuntime.awrap(Post.find().populate("likes").populate("comments").exec());
 
         case 3:
           posts = _context2.sent;
-          _context2.next = 8;
+          res.json({
+            posts: posts
+          });
+          _context2.next = 10;
           break;
 
-        case 6:
-          _context2.prev = 6;
+        case 7:
+          _context2.prev = 7;
           _context2.t0 = _context2["catch"](0);
+          return _context2.abrupt("return", res.status(400).json({
+            error: "Error while fetching post"
+          }));
 
-        case 8:
+        case 10:
         case "end":
           return _context2.stop();
       }
     }
-  }, null, null, [[0, 6]]);
+  }, null, null, [[0, 7]]);
 };
 //# sourceMappingURL=postController.dev.js.map

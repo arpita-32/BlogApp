@@ -1,12 +1,17 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-const {dummyLink} = require("../controllers/LikeController");
+// Import Controller 
 const {createComment} = require("../controllers/commentController");
-const { createPost } = require("../controllers/postController");
+const {createPost,getAllPosts} = require("../controllers/postController");
+const {likePost,unlikePost} = require("../controllers/likeController");
 
-router.get("/dummyroute", dummyLink);
-router.post("/comments/create", createComment);
-router.post("/posts/create", createPost);
+// Mapping Create
+router.post("/comments/create",createComment)
+router.post("/posts/create",createPost)
+router.get("/posts",getAllPosts)
+router.post("/likes/like",likePost)
+router.post("/likes/unlike",unlikePost)
 
-module.exports = router;
+// Export Controller
+module.exports = router; 
